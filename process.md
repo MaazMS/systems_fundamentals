@@ -209,7 +209,45 @@ A thread is a simple path of execution within a process. A big work is divided i
 • Since threads share same address space, virtualized memory is only associated with processes but not with threads.    
 • Each process has its own code and data whereas the threads of processes share same code and data.   
 • Context switching between processes is much slower than the context switching between threads of the same process.   
-• Processes have overheads but not threads.     
+• Processes have overheads but not threads.      
+
+### Q4 Process Synchronization
+Process Synchronization is the task of coordinating the execution of processes in a way that no two processes can have access to the same shared data and resources.    
+![](https://www.guru99.com/images/1/122319_0848_ProcessSync1.png)     
+
+* There are two types of Processes in an Operating Systems:-    
+
+Independent Process –   
+The process that does not affect or is affected by the other process while its execution then the process is called Independent Process. Example The process that does not share any shared variable, database, files, etc.    
+Cooperating Process –   
+The process that affect or is affected by the other process while execution, is called a Cooperating Process. Example The process that share file, variable, database, etc are the Cooperating Process.    
+
+* Sections of a Program   
+Here, are four essential elements of the critical section:   
+
+Entry Section: It is part of the process which decides the entry of a particular process.   
+Critical Section: This part allows one process to enter and modify the shared variable.    
+Exit Section: Exit section allows the other process that are waiting in the Entry Section, to enter into the Critical Sections. It also checks that a process that finished its execution should be removed through this Section.    
+Remainder Section: All other parts of the Code, which is not in Critical, Entry, and Exit Section, are known as the Remainder Section.
+* What is Critical Section Problem?  
+A critical section is a segment of code which can be accessed by a signal process at a specific point of time. The section consists of shared data resources that required to be accessed by other processes.   
+
+The entry to the critical section is handled by the wait() function, and it is represented as P().   
+The exit from a critical section is controlled by the signal() function, represented as V().     
+
+### Q5 Thread safety 
+
+* definition    
+Thread safety refer to code which can be    
+* invoked in multiple thread at the same time.   
+* implementation is guranteed to be free of race condition (Synchronization).    
+* resources are not protected form simultaneous access(the same variable in different thread at time needs to work correctly) .   
+* There is no undefined behavior(give corect result).   
+* does no break and produces the correct result.   
+  
+[more about Thread safty](https://youtu.be/pWTtPnwialI)
+
+
 
 
 
